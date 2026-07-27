@@ -25,8 +25,8 @@
         Kp_roll: 0.02,
         Kd_roll: 0.4,
 
-        yawDampThreshold: 0.2,
-        yawDampStrength: 10
+        yawDampThreshold: 0.5,
+        yawDampStrength: 0.5
     };
 
     // State Tracking
@@ -64,7 +64,7 @@
             if (rotationDelta < -180) rotationDelta += 360;
 
             if (Math.abs(rotationDelta) <= FBW_CONFIG.yawDampThreshold) {
-                geofs.animation.values.fbwYaw = yawInput + (rotationDelta / FBW_CONFIG.yawDampStrength);
+                geofs.animation.values.fbwYaw = yawInput + (rotationDelta * FBW_CONFIG.yawDampStrength);
             } else {
                 geofs.animation.values.fbwYaw = yawInput;
             }

@@ -19,8 +19,8 @@
     const SAS_CONFIG = {
         pitchDamping: 0.8,
         rollDamping: 0.8,
-        yawDampThreshold: 0.2,
-        yawDampStrength: 10
+        yawDampThreshold: 0.5,
+        yawDampStrength: 0.5
     };
 
     // State Tracking
@@ -58,7 +58,7 @@
             if (rotationDelta < -180) rotationDelta += 360;
 
             if (Math.abs(rotationDelta) <= SAS_CONFIG.yawDampThreshold) {
-                geofs.animation.values.fbwYaw = yawInput + (rotationDelta / SAS_CONFIG.yawDampStrength);
+                geofs.animation.values.fbwYaw = yawInput + (rotationDelta * SAS_CONFIG.yawDampStrength);
             } else {
                 geofs.animation.values.fbwYaw = yawInput;
             }
