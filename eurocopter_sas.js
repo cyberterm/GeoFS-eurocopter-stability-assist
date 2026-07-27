@@ -19,8 +19,8 @@
     const SAS_CONFIG = {
         pitchDamping: 0.8,
         rollDamping: 0.8,
-        yawDampThreshold: 0.5,
-        yawDampStrength: 0.5
+        yawDampThreshold: 0.4,
+        yawDampStrength: 1.0
     };
 
     // State Tracking

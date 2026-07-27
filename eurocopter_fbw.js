@@ -25,8 +25,8 @@
         Kp_roll: 0.02,
         Kd_roll: 0.4,
 
-        yawDampThreshold: 0.5,
-        yawDampStrength: 0.5
+        yawDampThreshold: 0.4,
+        yawDampStrength: 1.0
     };
 
     // State Tracking
